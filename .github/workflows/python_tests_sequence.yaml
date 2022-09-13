@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip install -r requirements.txt
-      - run: pytest tests/ -m "priority_high"
+      - run: pytest tests/ -v -m "priority_high"
 
   tests_all:
     name: Run other python tests
@@ -24,4 +24,4 @@ jobs:
         with:
           python-version: '3.10'
       - run: pip install -r requirements.txt
-      - run: pytest tests/ -m "not priority_high"
+      - run: pytest tests/ -v -m "not priority_high"
