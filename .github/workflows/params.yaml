@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Test suite'
+        required: false
+        type: choice
+        default: api
+        options: [integration, mobile, desktop, api]
+
+jobs:
+  simple:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo test
