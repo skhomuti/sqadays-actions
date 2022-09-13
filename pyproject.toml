@@ -1,2 +1,8 @@
 [tool.pytest]
-marks = "priority_high"
+markers = [
+    "priority_high",
+    "desktop",
+    "mobile",
+    "api",
+    "integration",
+]
