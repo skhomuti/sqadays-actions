@@ -1,0 +1,2 @@
+[tool.pytest]
+marks = "priority_high"

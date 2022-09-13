@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  tests_high:
+    name: Run python tests with high priority
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install -r requirements.txt
+      - run: pytest tests/ -m "priority_high"
+
+  tests_all:
+    name: Run other python tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: pip install -r requirements.txt
+      - run: pytest tests/ -m "not priority_high"
