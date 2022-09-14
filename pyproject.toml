@@ -5,4 +5,5 @@ markers = [
     "mobile",
     "api",
     "integration",
+    "should_fail",
 ]

@@ -1,4 +1,4 @@
-on: push
+on: workflow_dispatch
 
 jobs:
   commands:
@@ -7,10 +7,12 @@ jobs:
       - run: echo "::group::Messages are grouped" && 
              echo "This message is in group" && 
              echo "::endgroup::"
+
       - run: echo "::debug::Set the Octocat variable"
       - run: echo "::notice title=Notice title::Some notice message"
       - run: echo "::warning title=Warning title::Some warning message"
       - run: echo "::error title=Error title::Some error message"
+
       - run: echo "### All tests passed! :rocket:" >> $GITHUB_STEP_SUMMARY
       - run: 'echo "- Mobile: 12\12 " >> $GITHUB_STEP_SUMMARY'
       - run: 'echo "- Desktop: 7\7 " >> $GITHUB_STEP_SUMMARY'
