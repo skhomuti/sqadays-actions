@@ -1,0 +1,20 @@
+
+on:
+  workflow_call:
+    inputs:
+      dangerous_input:
+        required: false
+        type: string
+        description: inject me
+
+jobs:
+  commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: It's dangerous!
+        run: echo ${{ inputs.dangerous_input }}
+
+      - name: It's safe
+        run: echo $INPUT
+        env:
+          INPUT: ${{ inputs.dangerous_input }}
