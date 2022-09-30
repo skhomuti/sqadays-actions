@@ -1,4 +1,3 @@
-
 on:
   workflow_dispatch:
     inputs:
@@ -11,10 +10,10 @@ jobs:
   commands:
     runs-on: ubuntu-latest
     steps:
-      - name: It's dangerous!
+      - name: It is dangerous!
         run: echo ${{ inputs.dangerous_input }}
 
-      - name: It's safe
+      - name: It is safe
         run: echo $INPUT
         env:
           INPUT: ${{ inputs.dangerous_input }}
